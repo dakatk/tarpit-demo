@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    },
+    "lint": {
+        "rules": {
+            "exclude": ["no-explicit-any"]
+        }
+    }
+}
