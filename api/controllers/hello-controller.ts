@@ -1,9 +1,9 @@
 import {
     ControllerBase, 
-    Controller, 
-    GetMapping, 
-    JsonResponse
-} from '../../../tarpit/mod.ts';
+    Controller,
+    GetMapping,
+    JsonResponse,
+} from 'https://cdn.jsdelivr.net/gh/dakatk/tarpit-deno/mod.ts';
 
 @Controller()
 export class HelloController extends ControllerBase {

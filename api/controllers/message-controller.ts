@@ -6,7 +6,7 @@ import {
     JsonBody, 
     QueryParams, 
     RouteParams
-} from '../../../tarpit/mod.ts';
+} from 'https://cdn.jsdelivr.net/gh/dakatk/tarpit-deno/mod.ts';
 import { MessageService } from '../services/message-service.ts';
 
 @Controller()

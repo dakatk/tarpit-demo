@@ -1,4 +1,4 @@
-import { Tarpit, ServerConfig } from '../tarpit/mod.ts';
+import { Tarpit, ServerConfig } from 'https://cdn.jsdelivr.net/gh/dakatk/tarpit-deno/mod.ts';
 import { HelloController } from './api/controllers/hello-controller.ts';
 import { MessageController } from './api/controllers/message-controller.ts';
 import { MessageService } from './api/services/message-service.ts';

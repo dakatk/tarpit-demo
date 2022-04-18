@@ -1,4 +1,4 @@
-import { Injectable, Config } from '../../../tarpit/mod.ts';
+import { Injectable, Config } from 'https://cdn.jsdelivr.net/gh/dakatk/tarpit-deno/mod.ts';
 
 @Injectable()
 export class MessageService {
