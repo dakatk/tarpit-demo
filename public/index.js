@@ -4,7 +4,7 @@ function loadMessageResponse() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name: 'Meagan' })
+        body: JSON.stringify({ name: 'Tessa' })
     })
     .then(async response => {
         if (response.status != 200) {
@@ -32,7 +32,43 @@ function loadHelloResponse() {
         .catch(reason => console.error(reason.message));
 }
 
+function downloadFile() {
+    fetch('http://localhost:8000/file/example')
+        .then(async response => {
+            if (response.status != 200) {
+                console.error(await response.text())
+            }
+            else {
+                const localUri = response.headers.get('location');
+                const filename = localUri.split('/').pop();
+                
+                const blob = await response.blob();
+                const blobUri = window.URL.createObjectURL(blob);
+                
+                downloadUri(blobUri, filename);
+            }
+        })
+        .catch(reason => console.error(reason.message));
+}
+
+
+
+function downloadUri(uri, name)
+{
+    const link = document.createElement("a");
+
+    link.setAttribute('download', name);
+    link.href = uri;
+
+    document.body.appendChild(link);
+
+    link.click();
+    link.remove();
+}
+
+
 window.onload = () => {
     loadMessageResponse();
     document.getElementById('hello-button').onclick = () => loadHelloResponse();
+    document.getElementById('download-button').onclick = () => downloadFile();
 }

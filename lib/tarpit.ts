@@ -1,0 +1,1 @@
+export * from 'https://cdn.jsdelivr.net/gh/dakatk/tarpit-deno/mod.ts'

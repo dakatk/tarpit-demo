@@ -1,14 +1,14 @@
-import { Injectable, Config } from 'https://cdn.jsdelivr.net/gh/dakatk/tarpit-deno/mod.ts';
+import { Singleton } from '../../lib/tarpit.ts';
+import { ApiConfig } from '../config/api-config.ts';
+import { capitalize } from '../util/strings.ts';
 
-@Injectable()
+@Singleton()
 export class MessageService {
 
-    @Config('message')
-    private static messageArg = '';
+    message(sender: string, receiver: string): string {
+        sender = capitalize(sender);
+        receiver = capitalize(receiver);
 
-    get message(): Promise<string> {
-        return new Promise(resolve => {
-            resolve(MessageService.messageArg)
-        });
+        return `Message for ${receiver} from ${sender}: "${ApiConfig.message}"`
     }
 }

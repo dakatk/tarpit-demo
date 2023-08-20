@@ -3,7 +3,7 @@ import {
     Controller,
     GetMapping,
     JsonResponse,
-} from 'https://cdn.jsdelivr.net/gh/dakatk/tarpit-deno/mod.ts';
+} from '../../lib/tarpit.ts';
 
 @Controller()
 export class HelloController extends ControllerBase {
